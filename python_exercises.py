@@ -1,3 +1,5 @@
+import math
+import numpy as np
 ################# question 1 ###################
 def q1_div(x,y):
     l=[]
@@ -47,9 +49,51 @@ class q5_string:
 #test5.printString()
 
 ################# question 6 ###################
+def q6_sqr_func(c=50,h=30):
+    value =[]
+    items=[x for x in input().split(',')]
+    for d in items:
+        value.append(str(int(round(math.sqrt(2*c*float(d)/h)))))
+    print(','.join(value))
+
+################# question 7 ###################
+# defined using numpy, return numpy.ndarray
+def q7_array_build(x,y):
+    a = np.zeros(shape=(x,y))
+    for i in range(0,x):
+        for j in range(0,y):
+            a[i][j] = i*j
+    print(a)
+    return(a)
+
+# defined using list of list, return list
+def q7_array_build_s():
+    input_str = input()
+    dimensions=[int(x) for x in input_str.split(',')]
+    rowNum=dimensions[0]
+    colNum=dimensions[1]
+    multilist = [[0 for col in range(colNum)] for row in range(rowNum)]
+
+    for row in range(rowNum):
+        for col in range(colNum):
+            multilist[row][col]= row*col
+    print(multilist)
+    return(multilist)
+
+
+ ################# question 8 ###################   
+def q8_sort_words():
+    x_string = input()
+    x_list = [x for x in x_string.split(',')]
+    x_list.sort()
+    print(','.join(x_list))
+ 
+ ################# question 9 ################### 
+def q9_capitilize_string():
+    x_string = input()
+    print(x_string.upper())
+
 
 
 if __name__ == "__main__":
-    test5 = q5_string()
-    test5.getString()
-    test5.printString()
+    q9_capitilize_string()
