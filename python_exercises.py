@@ -33,6 +33,23 @@ def q4_listtuple_s():
     print(l)
     print(t)
 
+################# question 5 ###################
+class q5_string:
+    def __init__(self):
+        self.get_string=""
+    def getString(self):
+        self.get_string=input()
+    def printString(self):
+        print(self.get_string.upper())
+
+#test5 = q5_string()
+#test5.getString()
+#test5.printString()
+
+################# question 6 ###################
+
 
 if __name__ == "__main__":
-    q4_listtuple_s()
+    test5 = q5_string()
+    test5.getString()
+    test5.printString()
